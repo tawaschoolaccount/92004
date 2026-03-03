@@ -6,8 +6,9 @@ camps_dictionary = {
   "Kayaking And Pancakes":["3 Days","Moderate", 400],
   "Mountain Biking":["4 Days","Difficult", 900]
 }
-print("\nThese are the activities and costs")
-print(camps_dictionary)
+print("\nThese are the activities and costs:")
+for item in camps_dictionary:
+  print(item)
 
 #Ask user for detials
 name = input("Enter your name: ")
