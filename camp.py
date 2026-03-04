@@ -36,6 +36,8 @@ bus_choice = input("Do you need the shuttle bus for an additional $80? ")
 
 #final details
 print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} (X difficulty) camp for X days. You are {age} years old. Your meal choice is {meal_choice}.")
-confirmation = input("Please confirm that you want to go to {camp_number} for the cost of $X (Y/N): ")
-print("Enjoy the camp")
+confirmation = input("Please confirm that you want to go to {camp_number} for the cost of $X (Y/N): ").upper()
+if confirmation == "Y": print("Enjoy the camp")
+elif confirmation == "N": print("Sorry to hear that, maybe next time")
+else:  print("Invalid input, please enter Y or N")
 #note: find a way to get the list of camp details from the dictionary list
