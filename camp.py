@@ -16,6 +16,7 @@ for camp, details_list in camps_dictionary.items():
     print(item)
   print('\n')
   loop_count += 1
+#notes: format this bit to have less lines
 
 #Ask user for details
 name = input("Enter your name: ")
