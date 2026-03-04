@@ -8,10 +8,14 @@ camps_dictionary = {
 }
 
 print("\nThese are the activities and costs:")
+loop_count = 0
 for camp, details_list in camps_dictionary.items():
+  print(loop_count)
   print(camp)
   for item in details_list:
     print(item)
+  print('\n')
+  loop_count += 1
 
 #Ask user for details
 name = input("Enter your name: ")
