@@ -17,7 +17,6 @@ for camp, details_list in camps_dictionary.items():
     print(item, end=' | ')
   print('\n')
   loop_count += 1
-#notes: format this bit to have less lines
 
 #Ask user for details
 name = input("Enter your name: ")
@@ -30,11 +29,11 @@ while len(age) == 0 or age.isdigit() == False:
     print("Enter a valid number")
 camp_number = int(input("Which camp number would you like to go to? "))
 
-#Extra
+#Additional choices
 meal_choice = input("Would you like a standard, vegererian, or vegan meal? ")
 bus_choice = input("Do you need the shuttle bus for an additional $80? ")
 
-#final details
+#Final details
 print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} (X difficulty) camp for X days. You are {age} years old. Your meal choice is {meal_choice}.")
 confirmation = input("Please confirm that you want to go to {camp_number} for the cost of $X (Y/N): ").upper()
 if confirmation == "Y": print("Enjoy the camp")
