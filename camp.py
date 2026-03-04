@@ -31,6 +31,10 @@ camp_number = int(input("Which camp number would you like to go to? "))
 
 #Additional choices
 meal_choice = input("Would you like a standard, vegererian, or vegan meal? ").lower()
+if meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
+  while meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
+    print("Please enter standard, vegetarian, or vegan")
+    meal_choice = input("Would you like a standard, vegererian, or vegan meal? ").lower()
 bus_choice = input("Do you need the shuttle bus for an additional $80?(Y/N) ").upper()
 if bus_choice != "Y" and bus_choice != "N":
   while bus_choice != "Y" and bus_choice != "N":
