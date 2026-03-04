@@ -6,6 +6,7 @@ camps_dictionary = {
   "Kayaking And Pancakes":["3 Days","Moderate", 400],
   "Mountain Biking":["4 Days","Difficult", 900]
 }
+camps_list = list(camps_dictionary.keys())
 
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
@@ -27,14 +28,14 @@ while len(age) == 0 or age.isdigit() == False:
     print("You cannot have a blank age")
   if len(age) != 0 and age.isdigit() == False:
     print("Enter a valid number")
-camp_number = input("Which camp number would you like to go to? ")
+camp_number = int(input("Which camp number would you like to go to? "))
 
 #Extra
 meal_choice = input("Would you like a standard, vegererian, or vegan meal? ")
 bus_choice = input("Do you need the shuttle bus for an additional $80? ")
 
 #final details
-print(f"\nHello {name}, you have chosen to go to the {camp_number} (X difficulty) camp for X days. You are {age} years old. Your meal choice is {meal_choice}.")
+print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} (X difficulty) camp for X days. You are {age} years old. Your meal choice is {meal_choice}.")
 confirmation = input("Please confirm that you want to go to {camp_number} for the cost of $X (Y/N): ")
 print("Enjoy the camp")
 #note: find a way to get the list of camp details from the dictionary list
