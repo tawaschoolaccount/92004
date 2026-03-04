@@ -7,15 +7,16 @@ camps_dictionary = {
   "Mountain Biking":["4 Days","Difficult", 900]
 }
 
-print("\nThese are the camps, lengths, difficulties, and costs:")
+print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
 for camp, details_list in camps_dictionary.items():
   print(loop_count, end=': ')
   print(camp, end=' - ')
   for item in details_list:
-    print(item, end=', ')
+    print(item, end=' | ')
   print('\n')
   loop_count += 1
+#notes: format this bit to have less lines
 
 #Ask user for details
 name = input("Enter your name: ")
