@@ -8,8 +8,10 @@ camps_dictionary = {
 }
 
 print("\nThese are the activities and costs:")
-for item in camps_dictionary:
-  print(item)
+for camp, details_list in camps_dictionary.items():
+  print(camp)
+  for item in details_list:
+    print(item)
 
 #Ask user for details
 name = input("Enter your name: ")
