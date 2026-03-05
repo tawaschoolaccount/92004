@@ -2,12 +2,12 @@ print("Tane's School Holiday Camp")
 
 #List the camp options
 camps_dictionary = {
-  "Cultural Immersion":["5 Days","Easy", 800],
-  "Kayaking And Pancakes":["3 Days","Moderate", 400],
-  "Mountain Biking":["4 Days","Difficult", 900]
+  "Cultural Immersion":["5 days","Easy", 800],
+  "Kayaking And Pancakes":["3 days","Moderate", 400],
+  "Mountain Biking":["4 days","Difficult", 900]
 }
 camps_list = list(camps_dictionary.keys())
-
+#number strings to numbers for age input
 age_numbers = {
   "five": 5,
   "six": 6,
@@ -23,7 +23,11 @@ age_numbers = {
   "sixteen": 16,
   "seventeen": 17,
 }
-
+camp_numbers = {
+  "one": 1,
+  "two": 2,
+  "three": 3
+}
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
 for camp, details_list in camps_dictionary.items():
@@ -48,11 +52,17 @@ while len(age) == 0 or age.isdigit() == False or int(age) < 5 or int(age) > 17:
       print("Please enter a valid age")
   if len(age) != 0 and age.isdigit() == True and (int(age) < 5 or int(age) > 17):
     print("Sorry, you do not meet the age requirements for the camp")
-
-camp_number = int(input("Which camp number would you like to go to? "))
+#camp choice
+camp_number = input("Which camp number would you like to go to? ")
+if camp_number not in ["1", "2", "3", "one", "two", "three"]:
+  while camp_number not in ["1", "2", "3", "one", "two", "three"]:
+    print("Please enter a valid camp number")
+    camp_number = input("Which camp number would you like to go to? ")
+if camp_number in ["one", "two", "three"]:
+  camp_number = camp_numbers[camp_number]
 
 #Additional choices
-meal_choice = input("Would you like a standard, vegererian, or vegan meal? ").lower()
+meal_choice = input("Would you like a standard, vegetarian, or vegan meal? ").lower()
 if meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
   while meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
     print("Please enter standard, vegetarian, or vegan")
