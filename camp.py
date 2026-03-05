@@ -41,6 +41,10 @@ for camp, details_list in camps_dictionary.items():
   loop_count += 1
 #Ask user for details
 name = input("Enter your name: ")
+if len(name) == 0:
+  while len(name) == 0:
+    print("You cannot have a blank name")
+    name = input("Enter your name: ")
 age = ''
 while len(age) == 0 or age.isdigit() == False or int(age) < minimum_age or int(age) > maximum_age:
   age = input("Enter your age: ")
@@ -53,7 +57,6 @@ while len(age) == 0 or age.isdigit() == False or int(age) < minimum_age or int(a
       print("Please enter a valid age")
   if len(age) != 0 and age.isdigit() == True and (int(age) < minimum_age or int(age) > maximum_age):
     print("Sorry, you do not meet the age requirements for the camp")
-#Ask the user if they want to be a camp leader
 if int(age) >= leader_age:
   leader_choice = input("You are old enough to be a leader, would you like to be a leader for the camp? (Y/N) ").upper()
   if leader_choice != "Y" and leader_choice != "N":
