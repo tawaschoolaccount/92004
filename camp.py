@@ -27,9 +27,6 @@ camp_numbers = {
   "one": 1,
   "two": 2,
   "three": 3,
-  "cultural immersion": 1,
-  "kayaking and pancakes": 2,
-  "mountain biking": 3
 }
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
@@ -56,11 +53,11 @@ while len(age) == 0 or age.isdigit() == False or int(age) < 5 or int(age) > 17:
   if len(age) != 0 and age.isdigit() == True and (int(age) < 5 or int(age) > 17):
     print("Sorry, you do not meet the age requirements for the camp")
 #camp choice
-camp_number = input("Which camp would you like to go to? ")
-if camp_number not in ["1", "2", "3", "one", "two", "three", "cultural immersion", "kayaking and pancakes", "mountain biking"]:
-  while camp_number not in ["1", "2", "3", "one", "two", "three", "cultural immersion", "kayaking and pancakes", "mountain biking"]:
-    print("Please enter a valid camp")
-    camp_number = input("Which camp would you like to go to? ")
+camp_number = input("Which camp number would you like to go to? ")
+if camp_number not in ["1", "2", "3", "one", "two", "three"]:
+  while camp_number not in ["1", "2", "3", "one", "two", "three"]:
+    print("Please enter a valid camp number")
+    camp_number = input("Which camp number would you like to go to? ")
 if camp_number in ["one", "two", "three"]:
   camp_number = camp_numbers[camp_number]
 
@@ -69,7 +66,7 @@ meal_choice = input("Would you like a standard, vegetarian, or vegan meal? ").lo
 if meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
   while meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
     print("Please enter standard, vegetarian, or vegan")
-    meal_choice = input("Would you like a standard, vegetarian, or vegan meal? ").lower()
+    meal_choice = input("Would you like a standard, vegererian, or vegan meal? ").lower()
 bus_choice = input("Do you need the shuttle bus for an additional $80?(Y/N) ").upper()
 if bus_choice != "Y" and bus_choice != "N":
   while bus_choice != "Y" and bus_choice != "N":
