@@ -1,5 +1,4 @@
 print("Tane's School Holiday Camp")
-
 #List the camp options
 camps_dictionary = {
   "Cultural Immersion":["5 days","Easy", 800],
@@ -7,7 +6,7 @@ camps_dictionary = {
   "Mountain Biking":["4 days","Difficult", 900]
 }
 camps_list = list(camps_dictionary.keys())
-#number strings to numbers for age input
+#Number strings to numbers for age input
 age_numbers = {
   "five": 5,
   "six": 6,
@@ -37,7 +36,6 @@ for camp, details_list in camps_dictionary.items():
     print(item, end=' | ')
   print('\n')
   loop_count += 1
-
 #Ask user for details
 name = input("Enter your name: ")
 age = ''
@@ -52,7 +50,7 @@ while len(age) == 0 or age.isdigit() == False or int(age) < 5 or int(age) > 17:
       print("Please enter a valid age")
   if len(age) != 0 and age.isdigit() == True and (int(age) < 5 or int(age) > 17):
     print("Sorry, you do not meet the age requirements for the camp")
-#camp choice
+#Camp choice
 camp_number = input("Which camp number would you like to go to? ")
 if camp_number not in ["1", "2", "3", "one", "two", "three"]:
   while camp_number not in ["1", "2", "3", "one", "two", "three"]:
@@ -60,23 +58,21 @@ if camp_number not in ["1", "2", "3", "one", "two", "three"]:
     camp_number = input("Which camp number would you like to go to? ")
 if camp_number in ["one", "two", "three"]:
   camp_number = camp_numbers[camp_number]
-
-#Additional choices
+#Meal choice
 meal_choice = input("Would you like a standard, vegetarian, or vegan meal? ").lower()
 if meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
   while meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
     print("Please enter standard, vegetarian, or vegan")
     meal_choice = input("Would you like a standard, vegererian, or vegan meal? ").lower()
+#Shuttle Bus choice
 bus_choice = input("Do you need the shuttle bus for an additional $80?(Y/N) ").upper()
 if bus_choice != "Y" and bus_choice != "N":
   while bus_choice != "Y" and bus_choice != "N":
     print("Please enter Y or N")
     bus_choice = input("Do you need the shuttle bus for an additional $80?(Y/N) ").upper()
-  
 #Calculations:
 cost = camps_dictionary[camps_list[camp_number - 1]][2]
 if bus_choice == "Y": cost += 80
-
 #Final details
 print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}. You are {age} years old. Your meal choice is {meal_choice}.")
 confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
