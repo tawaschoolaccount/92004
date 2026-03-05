@@ -8,6 +8,22 @@ camps_dictionary = {
 }
 camps_list = list(camps_dictionary.keys())
 
+age_numbers = {
+  "five": 5,
+  "six": 6,
+  "seven": 7,
+  "eight": 8,
+  "nine": 9,
+  "ten": 10,
+  "eleven": 11,
+  "twelve": 12,
+  "thirteen": 13,
+  "fourteen": 14,
+  "fifteen": 15,
+  "sixteen": 16,
+  "seventeen": 17,
+}
+
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
 for camp, details_list in camps_dictionary.items():
@@ -21,13 +37,17 @@ for camp, details_list in camps_dictionary.items():
 #Ask user for details
 name = input("Enter your name: ")
 age = ''
-while len(age) == 0 or age.isdigit() == False:
+while len(age) == 0 or age.isdigit() == False or int(age) < 5 or int(age) > 17:
   age = input("Enter your age: ")
   if len(age) == 0: 
     print("You cannot have a blank age")
   if len(age) != 0 and age.isdigit() == False:
-    print("Enter a valid number")
-#note: make the code check your age to ensure it's between 5 to 17
+    if age.lower() in age_numbers:
+      age = str(age_numbers[age.lower()])
+    else:
+      print("Please enter a valid age")
+  if len(age) != 0 and age.isdigit() == True and (int(age) < 5 or int(age) > 17):
+    print("Sorry, you do not meet the age requirements for the camp")
 
 camp_number = int(input("Which camp number would you like to go to? "))
 
@@ -48,7 +68,7 @@ cost = camps_dictionary[camps_list[camp_number - 1]][2]
 if bus_choice == "Y": cost += 80
 
 #Final details
-print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} (X difficulty) camp for X days. You are {age} years old. Your meal choice is {meal_choice}.")
+print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}. You are {age} years old. Your meal choice is {meal_choice}.")
 confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
 if confirmation != "Y" and confirmation != "N":
   while confirmation != "Y" and confirmation != "N":
@@ -56,4 +76,3 @@ if confirmation != "Y" and confirmation != "N":
     confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
 if confirmation == "Y": print("Enjoy the camp")
 elif confirmation == "N": print("Sorry to hear that, maybe next time")
-#note: find a way to get the list of camp details from the dictionary list
