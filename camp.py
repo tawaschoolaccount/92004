@@ -22,13 +22,14 @@ age_numbers = {
   "sixteen": 16,
   "seventeen": 17,
 }
+minimum_age = 5
+maximum_age = 17
+leader_age = 15
 camp_numbers = {
   "one": 1,
   "two": 2,
   "three": 3,
 }
-minimum_age = 5
-maximum_age = 17
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
 for camp, details_list in camps_dictionary.items():
@@ -52,6 +53,15 @@ while len(age) == 0 or age.isdigit() == False or int(age) < minimum_age or int(a
       print("Please enter a valid age")
   if len(age) != 0 and age.isdigit() == True and (int(age) < minimum_age or int(age) > maximum_age):
     print("Sorry, you do not meet the age requirements for the camp")
+#Ask the user if they want to be a camp leader
+if int(age) >= leader_age:
+  leader_choice = input("You are old enough to be a leader, would you like to be a leader for the camp? (Y/N) ").upper()
+  if leader_choice != "Y" and leader_choice != "N":
+    while leader_choice != "Y" and leader_choice != "N":
+      print("Please enter Y or N")
+      leader_choice = input("You are old enough to be a leader. Would you like to be a leader for the camp? (Y/N) ").upper()
+  if leader_choice == "Y": print("Great, you will be a leader for the camp")
+  elif leader_choice == "N": print("No worries, you can still attend the camp as a participant")
 #Camp choice
 camp_number = input("Which camp number would you like to go to? ")
 if camp_number not in ["1", "2", "3", "one", "two", "three"]:
