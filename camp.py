@@ -27,6 +27,8 @@ camp_numbers = {
   "two": 2,
   "three": 3,
 }
+minimum_age = 5
+maximum_age = 17
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
 for camp, details_list in camps_dictionary.items():
@@ -39,7 +41,7 @@ for camp, details_list in camps_dictionary.items():
 #Ask user for details
 name = input("Enter your name: ")
 age = ''
-while len(age) == 0 or age.isdigit() == False or int(age) < 5 or int(age) > 17:
+while len(age) == 0 or age.isdigit() == False or int(age) < minimum_age or int(age) > maximum_age:
   age = input("Enter your age: ")
   if len(age) == 0: 
     print("You cannot have a blank age")
@@ -48,7 +50,7 @@ while len(age) == 0 or age.isdigit() == False or int(age) < 5 or int(age) > 17:
       age = str(age_numbers[age.lower()])
     else:
       print("Please enter a valid age")
-  if len(age) != 0 and age.isdigit() == True and (int(age) < 5 or int(age) > 17):
+  if len(age) != 0 and age.isdigit() == True and (int(age) < minimum_age or int(age) > maximum_age):
     print("Sorry, you do not meet the age requirements for the camp")
 #Camp choice
 camp_number = input("Which camp number would you like to go to? ")
@@ -74,7 +76,7 @@ if bus_choice != "Y" and bus_choice != "N":
 cost = camps_dictionary[camps_list[camp_number - 1]][2]
 if bus_choice == "Y": cost += 80
 #Final details
-print(f"\nHello {name}, you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}. You are {age} years old. Your meal choice is {meal_choice}.")
+print(f"\nHello {name} ({age}), you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}, and your meal choice is {meal_choice}.")
 confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
 if confirmation != "Y" and confirmation != "N":
   while confirmation != "Y" and confirmation != "N":
