@@ -27,6 +27,8 @@ while len(age) == 0 or age.isdigit() == False:
     print("You cannot have a blank age")
   if len(age) != 0 and age.isdigit() == False:
     print("Enter a valid number")
+#note: make the code check your age to ensure it's between 5 to 17
+
 camp_number = int(input("Which camp number would you like to go to? "))
 
 #Additional choices
