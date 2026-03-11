@@ -46,7 +46,7 @@ for camp, details_list in camps_dictionary.items():
   print('\n')
   loop_count += 1
   
-#Ask user for name
+#Ask user for name and check if it is valid
 name = input("Enter your name: ")
 if len(name) == 0 or age.isdigit():
   while len(name) == 0:
@@ -81,7 +81,7 @@ if int(age) >= leader_age:
   elif leader_choice == "N": print("No worries, you can still attend the camp as a participant")
     
 #Camp choice
-camp_number = input("Which camp number would you like to go to? ")
+camp_number = input("Which camp number would you like to go to? (1, 2, 3) ")
 if camp_number not in ["1", "2", "3", "one", "two", "three"]:
   while camp_number not in ["1", "2", "3", "one", "two", "three"]:
     print("Please enter a valid camp number")
