@@ -7,6 +7,11 @@ camps_dictionary = {
 }
 camps_list = list(camps_dictionary.keys())
 
+#constants
+minimum_age = 5
+maximum_age = 17
+leader_age = 15
+
 #Number strings to numbers for age input
 age_numbers = {
   "five": 5,
@@ -24,9 +29,6 @@ age_numbers = {
   "seventeen": 17,
 }
 
-minimum_age = 5
-maximum_age = 17
-leader_age = 15
 camp_numbers = {
   "one": 1,
   "two": 2,
