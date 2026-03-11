@@ -7,7 +7,7 @@ camps_dictionary = {
 }
 camps_list = list(camps_dictionary.keys())
 
-#constants
+#Constants
 minimum_age = 5
 maximum_age = 17
 leader_age = 15
