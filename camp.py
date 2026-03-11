@@ -43,12 +43,14 @@ for camp, details_list in camps_dictionary.items():
   print('\n')
   loop_count += 1
   
-#Ask user for details
+#Ask user for name
 name = input("Enter your name: ")
 if len(name) == 0:
   while len(name) == 0:
     print("You cannot have a blank name")
     name = input("Enter your name: ")
+
+#Ask user for age and check if it is valid
 age = ''
 while len(age) == 0 or age.isdigit() == False or int(age) < minimum_age or int(age) > maximum_age:
   age = input("Enter your age: ")
