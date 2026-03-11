@@ -5,8 +5,8 @@ camps_dictionary = {
   "Kayaking And Pancakes":["3 days","Moderate", 400],
   "Mountain Biking":["4 days","Difficult", 900]
 }
-
 camps_list = list(camps_dictionary.keys())
+
 #Number strings to numbers for age input
 age_numbers = {
   "five": 5,
@@ -33,6 +33,7 @@ camp_numbers = {
   "three": 3,
 }
 
+#Print camp list
 print("\nThese are the camps, lengths, difficulties, and costs in $:\n")
 loop_count = 1
 for camp, details_list in camps_dictionary.items():
@@ -80,6 +81,7 @@ if camp_number not in ["1", "2", "3", "one", "two", "three"]:
     camp_number = input("Which camp number would you like to go to? ")
 if camp_number in ["one", "two", "three"]:
   camp_number = camp_numbers[camp_number]
+  
 #Meal choice
 meal_choice = input("Would you like a standard, vegetarian, or vegan meal? ").lower()
 if meal_choice != "standard" and meal_choice != "vegetarian" and meal_choice != "vegan":
@@ -97,6 +99,7 @@ if bus_choice != "Y" and bus_choice != "N":
 #Calculations:
 cost = camps_dictionary[camps_list[camp_number - 1]][2]
 if bus_choice == "Y": cost += 80
+  
 #Final details
 print(f"\nHello {name} ({age}), you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}, and your meal choice is {meal_choice}.")
 confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
