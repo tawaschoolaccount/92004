@@ -48,9 +48,12 @@ for camp, details_list in camps_dictionary.items():
   
 #Ask user for name
 name = input("Enter your name: ")
-if len(name) == 0:
+if len(name) == 0 or age.isdigit():
   while len(name) == 0:
     print("You cannot have a blank name")
+    name = input("Enter your name: ")
+  while age.isdigit():
+    print("Please enter a valid name")
     name = input("Enter your name: ")
 
 #Ask user for age and check if it is valid
