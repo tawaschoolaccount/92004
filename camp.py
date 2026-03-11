@@ -11,6 +11,7 @@ camps_list = list(camps_dictionary.keys())
 minimum_age = 5
 maximum_age = 17
 leader_age = 15
+bus_cost = 80
 
 #Number strings to numbers for age input
 age_numbers = {
@@ -105,7 +106,7 @@ if bus_choice != "Y" and bus_choice != "N":
     
 #Calculations:
 cost = camps_dictionary[camps_list[camp_number - 1]][2]
-if bus_choice == "Y": cost += 80
+if bus_choice == "Y": cost += bus_cost
   
 #Final details
 print(f"\nHello {name} ({age}), you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}, and your meal choice is {meal_choice}.")
