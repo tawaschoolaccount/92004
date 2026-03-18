@@ -53,7 +53,7 @@ if len(name) == 0 or name.isdigit():
   while len(name) == 0:
     print("You cannot have a blank name")
     name = input("Enter your name: ")
-  while name.isdigit():
+  while name.isdigit() or any(char.isdigit() for char in name):
     print("Please enter a valid name")
     name = input("Enter your name: ")
 
@@ -109,7 +109,7 @@ cost = camps_dictionary[camps_list[camp_number - 1]][2]
 if bus_choice == "Y": cost += bus_cost
   
 #Final details
-print(f"\nHello {name} ({age}), you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}, and your meal choice is {meal_choice}.")
+print(f"\nHello {name.title()} ({age}), you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}, and your meal choice is {meal_choice}.")
 confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
 if confirmation != "Y" and confirmation != "N":
   while confirmation != "Y" and confirmation != "N":
