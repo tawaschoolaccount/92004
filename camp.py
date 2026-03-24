@@ -105,15 +105,15 @@ if bus_choice != "Y" and bus_choice != "N":
     bus_choice = input("Do you need the shuttle bus for an additional $80?(Y/N) ").upper()
     
 #Calculations:
-cost = camps_dictionary[camps_list[camp_number - 1]][2]
+cost = camps_dictionary[camps_list[int(camp_number) - 1]][2]
 if bus_choice == "Y": cost += bus_cost
   
 #Final details
-print(f"\nHello {name.title()} ({age}), you have chosen to go to the {camps_list[camp_number - 1]} ({camps_dictionary[camps_list[camp_number - 1]][1]}) camp for {camps_dictionary[camps_list[camp_number - 1]][0]}, and your meal choice is {meal_choice}.")
-confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
+print(f"\nHello {name.title()} ({age}), you have chosen to go to the {camps_list[int(camp_number) - 1]} ({camps_dictionary[camps_list[int(camp_number) - 1]][1]}) camp for {camps_dictionary[camps_list[int(camp_number) - 1]][0]}, and your meal choice is {meal_choice}.")
+confirmation = input(f"Please confirm that you want to go to {camps_list[int(camp_number) - 1]} for the cost of ${cost} (Y/N): ").upper()
 if confirmation != "Y" and confirmation != "N":
   while confirmation != "Y" and confirmation != "N":
     print("Please enter Y or N")
-    confirmation = input(f"Please confirm that you want to go to {camps_list[camp_number - 1]} for the cost of ${cost} (Y/N): ").upper()
+    confirmation = input(f"Please confirm that you want to go to {camps_list[int(camp_number) - 1]} for the cost of ${cost} (Y/N): ").upper()
 if confirmation == "Y": print("Enjoy the camp")
 elif confirmation == "N": print("Sorry to hear that, maybe next time")
